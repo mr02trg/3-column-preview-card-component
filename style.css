@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: 'Lexend Deca', sans-serif;
+  color: hsl(0, 0%, 100%);
+
+  /* variables */
+  --color-sedans: hsl(31, 77%, 52%);
+  --color-suvs: hsl(184, 100%, 22%);
+  --color-luxury: hsl(179, 100%, 13%);
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  margin: auto;
+  padding: 50px 25px;
+  background-color: hsl(0, 0%, 95%);
+  opacity: .75;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 80%;
+}
+.card-col {
+  padding: 50px 70px 50px 30px;
+}
+.card-col.sedans {
+  grid-column: 1/5;
+  background-color: var(--color-sedans);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.card-col.suvs {
+  grid-column: 5/9;
+  background-color: var(--color-suvs);
+}
+.card-col.luxury {
+  grid-column: 9/13;
+  background-color: var(--color-luxury);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.card-col .logo {
+  margin-bottom: 30px;
+}
+
+.card-col h1 {
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.card-col .description {
+  line-height: 25px;
+  opacity: .75;
+  margin-bottom: 60px;
+}
+
+.card-col .learn-more {
+  text-align: center;
+  border: none;
+  border-radius: 30px;
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+}
+.card-col .learn-more:hover {
+  border: 1px solid white;
+  background-color: transparent;
+  color: unset !important;
+}
+.card-col.sedans .learn-more {
+  color:var(--color-sedans);
+}
+.card-col.suvs .learn-more {
+  color:var(--color-suvs);
+}
+.card-col.luxury .learn-more {
+  color:var(--color-luxury);
+}
+
+
+@media screen and (max-width: 750px) {
+  .card {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .card-col {
+    padding: 50px 70px 50px 30px;
+  }
+  .card-col.sedans {
+    grid-row: 1/2;
+    grid-column: unset;
+    border-radius: unset;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .card-col.suvs {
+    grid-column: unset;
+    grid-row: 2/3;
+  }
+  .card-col.luxury {
+    grid-column: unset;
+    grid-row: 3/4;
+    border-radius: unset;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
